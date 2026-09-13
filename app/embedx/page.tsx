@@ -11,7 +11,7 @@ export default function EmbedxPage() {
   const bannerRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [activeTab, setActiveTab] = useState('About');
-  const tabs = ['About', 'Structure', 'Timeline', 'Rules', 'Contact'];
+  const tabs = ['About', 'Structure', 'Timeline', 'Rules', 'Components', 'Contact'];
 
   const handleContainerScroll = () => {
     if (!containerRef.current) return;
@@ -208,13 +208,13 @@ export default function EmbedxPage() {
                 <div className="flex gap-3 text-sm leading-relaxed text-white font-['Space_Grotesk'] tracking-wide [text-shadow:0_0_10px_rgba(255,255,255,0.7)]">
                   <span className="text-blue-500 font-bold mt-0.5">{'>'}</span>
                   <div>
-                    <strong className="text-white block mb-2 text-base">Phase 1 - Hands-on Workshop on ESP32 / Arduino Uno</strong>
+                    <strong className="text-white block mb-2 text-base">Phase 1 - Hands-on Workshop on ESP 8266 / Arduino Uno</strong>
                     <p className="mb-3">A structured workshop will be conducted by club members covering:</p>
                     <ul className="list-disc pl-5 space-y-1.5 mb-3 text-white font-['Space_Grotesk'] tracking-wide [text-shadow:0_0_10px_rgba(255,255,255,0.7)]">
-                      <li>Introduction to ESP32 / Arduino Uno architecture, pinout, and specifications.</li>
+                      <li>Introduction to ESP 8266 / Arduino Uno architecture, pinout, and specifications.</li>
                       <li>Setting up the Arduino IDE and uploading a first program.</li>
                       <li>Interfacing common sensors and actuators (digital I/O, analog input, PWM, serial communication).</li>
-                      <li>Basic Wi-Fi/Bluetooth functionality on ESP32 (where applicable to the problem statements).</li>
+                      <li>Basic Wi-Fi/Bluetooth functionality on ESP 8266 (where applicable to the problem statements).</li>
                       <li>Debugging techniques and best practices for wiring and code.</li>
                     </ul>
                     <p>This session ensures participants have the exact technical knowledge needed to build their assigned problem statement, rather than a generic tutorial disconnected from their task.</p>
@@ -340,6 +340,66 @@ export default function EmbedxPage() {
                 </div>
               </div>
             </div>
+            {/* KIT */}
+            <div id="section-Components">
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
+                <h2 className="text-2xl font-bold text-blue-400 drop-shadow-[0_0_8px_rgba(96,165,250,0.5)] font-['Space_Grotesk'] uppercase tracking-widest flex items-center gap-3">
+                  <span className="w-1.5 h-6 bg-blue-500 rounded-sm"></span>
+                  Components Used
+                </h2>
+                <a 
+                  href="/EmbedX_Components.pdf" 
+                  download="EmbedX_Components.pdf"
+                  className="px-4 py-2 bg-blue-500/10 border border-blue-500/50 rounded text-blue-400 font-['Space_Grotesk'] hover:bg-blue-500/20 hover:shadow-[0_0_15px_rgba(59,130,246,0.5)] transition-all duration-300 text-sm flex items-center gap-2"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                  Download List
+                </a>
+              </div>
+              <div className="bg-blue-900/10 border border-blue-500/20 rounded-lg overflow-hidden mb-4">
+                <table className="w-full text-left text-sm font-['Space_Grotesk'] text-white">
+                  <thead className="bg-blue-900/30 border-b border-blue-500/20">
+                    <tr>
+                      <th className="px-4 py-3 font-bold text-blue-400 tracking-wide">COMPONENT</th>
+                      <th className="px-4 py-3 font-bold text-blue-400 tracking-wide text-center w-32">QUANTITY</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-blue-500/10">
+                    <tr className="hover:bg-blue-500/5 transition-colors"><td className="px-4 py-2.5">ESP 8266</td><td className="px-4 py-2.5 text-center">1</td></tr>
+                    <tr className="hover:bg-blue-500/5 transition-colors"><td className="px-4 py-2.5">USB CABLE for ESP 8266</td><td className="px-4 py-2.5 text-center">1</td></tr>
+                    <tr className="hover:bg-blue-500/5 transition-colors"><td className="px-4 py-2.5">JUMPER WIRES</td><td className="px-4 py-2.5 text-center">3</td></tr>
+                    <tr className="hover:bg-blue-500/5 transition-colors"><td className="px-4 py-2.5">SG90 SERVO MOTOR</td><td className="px-4 py-2.5 text-center">2</td></tr>
+                    <tr className="hover:bg-blue-500/5 transition-colors"><td className="px-4 py-2.5">IR SENSOR MODULE</td><td className="px-4 py-2.5 text-center">1</td></tr>
+                    <tr className="hover:bg-blue-500/5 transition-colors"><td className="px-4 py-2.5">PIR Sensor (HC-SR501)</td><td className="px-4 py-2.5 text-center">1</td></tr>
+                    <tr className="hover:bg-blue-500/5 transition-colors"><td className="px-4 py-2.5">IC 555 / NE555</td><td className="px-4 py-2.5 text-center">1</td></tr>
+                    <tr className="hover:bg-blue-500/5 transition-colors"><td className="px-4 py-2.5">Small Breadboard</td><td className="px-4 py-2.5 text-center">1</td></tr>
+                    <tr className="hover:bg-blue-500/5 transition-colors"><td className="px-4 py-2.5">MPU6050 Module</td><td className="px-4 py-2.5 text-center">1</td></tr>
+                    <tr className="hover:bg-blue-500/5 transition-colors"><td className="px-4 py-2.5">Humidity Sensor (DHT11)</td><td className="px-4 py-2.5 text-center">1</td></tr>
+                    <tr className="hover:bg-blue-500/5 transition-colors"><td className="px-4 py-2.5">TTP224 Touch Sensor</td><td className="px-4 py-2.5 text-center">1</td></tr>
+                    <tr className="hover:bg-blue-500/5 transition-colors"><td className="px-4 py-2.5">Relay Module</td><td className="px-4 py-2.5 text-center">1</td></tr>
+                    <tr className="hover:bg-blue-500/5 transition-colors"><td className="px-4 py-2.5">MQ-2 Gas Sensor</td><td className="px-4 py-2.5 text-center">1</td></tr>
+                    <tr className="hover:bg-blue-500/5 transition-colors"><td className="px-4 py-2.5">NRF24L01 Module</td><td className="px-4 py-2.5 text-center">1</td></tr>
+                    <tr className="hover:bg-blue-500/5 transition-colors"><td className="px-4 py-2.5">Transistors (BC547, BC557)</td><td className="px-4 py-2.5 text-center">5</td></tr>
+                    <tr className="hover:bg-blue-500/5 transition-colors"><td className="px-4 py-2.5">Resistors (10 k╬⌐) + Capacitors</td><td className="px-4 py-2.5 text-center">5+5</td></tr>
+                    <tr className="hover:bg-blue-500/5 transition-colors"><td className="px-4 py-2.5">Current</td><td className="px-4 py-2.5 text-center">1</td></tr>
+                    <tr className="hover:bg-blue-500/5 transition-colors"><td className="px-4 py-2.5">Voltage</td><td className="px-4 py-2.5 text-center">1</td></tr>
+                    <tr className="hover:bg-blue-500/5 transition-colors"><td className="px-4 py-2.5">Buzzer</td><td className="px-4 py-2.5 text-center">1</td></tr>
+                    <tr className="hover:bg-blue-500/5 transition-colors"><td className="px-4 py-2.5">LDR Sensor</td><td className="px-4 py-2.5 text-center">1</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              
+              <div className="flex justify-between items-center bg-blue-500/10 border border-blue-500/30 p-5 rounded-lg mb-8 shadow-[0_0_15px_rgba(59,130,246,0.15)] relative overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-400/10 to-blue-500/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                <span className="text-white font-bold font-['Space_Grotesk'] tracking-wide text-lg flex items-center gap-3">
+                  <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                  Total Kit Price
+                </span>
+                <span className="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 drop-shadow-[0_0_8px_rgba(96,165,250,0.6)]">
+                  &#8377;1,414
+                </span>
+              </div>
+            </div>
 
             {/* CONTACT */}
             <div id="section-Contact">
@@ -378,6 +438,10 @@ export default function EmbedxPage() {
     </div>
   );
 }
+
+
+
+
 
 
 
